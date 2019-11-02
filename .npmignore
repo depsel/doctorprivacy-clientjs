@@ -1,0 +1,5 @@
+.vscode/
+src/
+notes/
+tsconfig.json
+publish.sh

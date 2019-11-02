@@ -1,0 +1,39 @@
+{
+  "name": "@depsel/doctorprivacy-clientjs",
+  "version": "0.1.48",
+  "description": "DoctorPrivacy Javascript API Client",
+  "author": "Alejandro Nicodemo",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "jsnext:main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "example": "ts-node ./src/examples/client-calls.ts",
+    "build": "./node_modules/.bin/tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/depsel/doctorprivacy-clientjs"
+  },
+  "homepage": "https://github.com/depsel/doctorprivacy-clientjs",
+  "keywords": [
+    "DoctorPrivacy",
+    "JS",
+    "Client",
+    "API",
+    "Javascript"
+  ],
+  "devDependencies": {
+    "@types/node": "^10.12.10",
+    "@types/node-fetch": "^2.1.4",
+    "@types/query-string": "^6.2.0",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
+    "query-string": "^6.2.0"
+  }
+}
