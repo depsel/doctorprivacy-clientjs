@@ -1,6 +1,6 @@
 {
   "name": "@depsel/doctorprivacy-clientjs",
-  "version": "0.1.48",
+  "version": "0.1.52",
   "description": "DoctorPrivacy Javascript API Client",
   "author": "Alejandro Nicodemo",
   "license": "MIT",

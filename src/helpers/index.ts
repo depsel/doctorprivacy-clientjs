@@ -14,76 +14,85 @@ function uniq(stringList: string[]) {
 
 export function stringToLeakedDataCategory(s: string, exceptionOnError: boolean = false): LeakipediaLeakedDataCategory {
   switch (s.trim().toUpperCase()){
-    case "EMAIL_ADDRESSES": return LeakipediaLeakedDataCategory.EmailAddresses;
-    case "PHONE_NUMBERS": return LeakipediaLeakedDataCategory.PhoneNumbers;
+    // Critical
+    case "CRYPTOCURRENCY_DATA": return LeakipediaLeakedDataCategory.CryptocurrencyData;
+    case "CREDIT_CARD_CVV": return LeakipediaLeakedDataCategory.CreditCardCVV;
+    case "CREDIT_CARD_NUMBERS": return LeakipediaLeakedDataCategory.CreditCardNumbers;
+    case "PLAIN_PASSWORDS": return LeakipediaLeakedDataCategory.PlainPasswords;
+    case "AUTH_TOKENS": return LeakipediaLeakedDataCategory.AuthTokens;
+    case "KEYBOARD_LOGS": return LeakipediaLeakedDataCategory.KeyboardLogs;
+    case "SENSITIVE_PHOTOS": return LeakipediaLeakedDataCategory.SensitivePhotos;
+    case "SENSITIVE_VIDEOS": return LeakipediaLeakedDataCategory.SensitiveVideos;
+    case "SEXUAL_ORIENTATION": return LeakipediaLeakedDataCategory.SexualOrientation;
+    case "SEXUAL_PRACTICES": return LeakipediaLeakedDataCategory.SexualPractices;
+    case "FINANCIAL_DATA": return LeakipediaLeakedDataCategory.FinancialData;
+    case "PRIVATE_MESSAGES": return LeakipediaLeakedDataCategory.PrivateMessages;
+    
+    // High
+    case "HASHED_PASSWORDS": return LeakipediaLeakedDataCategory.HashedPasswords;
+    case "DEVICE_INFORMATION": return LeakipediaLeakedDataCategory.DeviceInformation;
+    case "PURCHASES": return LeakipediaLeakedDataCategory.Purchases;
+    case "PHOTOS": return LeakipediaLeakedDataCategory.Photos;
+    case "VIDEOS": return LeakipediaLeakedDataCategory.Videos;
+    case "AUDIOS": return LeakipediaLeakedDataCategory.Audios;
+    case "PARTIAL_CREDIT_CARD_DATA": return LeakipediaLeakedDataCategory.PartialCreditCardData;
+    case "CREDITICIAL_STATUS": return LeakipediaLeakedDataCategory.CrediticialStatus;
+    case "DONATIONS": return LeakipediaLeakedDataCategory.Donations;
+    case "TAXATION_RECORDS": return LeakipediaLeakedDataCategory.TaxationRecords;
+    case "UTILITY_BILLS": return LeakipediaLeakedDataCategory.UtilityBills;
+
+    // Medium
+    case "PASSWORD_HINTS": return LeakipediaLeakedDataCategory.PasswordHints;
     case "ADDRESSES": return LeakipediaLeakedDataCategory.Addresses;
-    case "NAME": return LeakipediaLeakedDataCategory.Name;
-    case "SOCIAL_SECURITY_NUMBER": return LeakipediaLeakedDataCategory.SocialSecurityNumber;
-    case "PASSPORT_NUMBER": return LeakipediaLeakedDataCategory.PassportNumber;
+    case "PASSPORT_NUMBERS": return LeakipediaLeakedDataCategory.PassportNumbers;
+    case "GOVERMENT_ISSUED_IDS": return LeakipediaLeakedDataCategory.GovermentIssuedIDs;
     case "BIOMETRIC_DATA": return LeakipediaLeakedDataCategory.BiometricData;
+    case "PHONE_NUMBERS": return LeakipediaLeakedDataCategory.PhoneNumbers;
+    case "EMAIL_ADDRESSES": return LeakipediaLeakedDataCategory.EmailAddresses;
+    case "ASSETS_INFORMATION": return LeakipediaLeakedDataCategory.AssetsInformation;
+    case "INCOME_LEVEL": return LeakipediaLeakedDataCategory.IncomeLevel;
+    case "CONTACTS": return LeakipediaLeakedDataCategory.Contacts;
+    case "HEALTH": return LeakipediaLeakedDataCategory.Health;
+    case "POLITICAL_VIEWS": return LeakipediaLeakedDataCategory.PoliticalViews;
+    case "HABITS": return LeakipediaLeakedDataCategory.Habits;
+    case "INTERESTS": return LeakipediaLeakedDataCategory.Interests;
+    case "IMEI_NUMBERS": return LeakipediaLeakedDataCategory.IMEINumbers;
+    case "IMSI_NUMBERS": return LeakipediaLeakedDataCategory.IMSINumbers;
+    case "WEBSITE_ACTIVITY": return LeakipediaLeakedDataCategory.WebsiteActivity;
+    
+    // Low
+    case "NAME": return LeakipediaLeakedDataCategory.Name;
     case "GENDER": return LeakipediaLeakedDataCategory.Gender;
     case "BIRTHDATE": return LeakipediaLeakedDataCategory.Birthdate;
     case "LANGUAGES": return LeakipediaLeakedDataCategory.Languages;
     case "NATIONALITIES": return LeakipediaLeakedDataCategory.Nationalities;
     case "LOCATIONS": return LeakipediaLeakedDataCategory.Locations;
-    case "SEXUAL_ORIENTATION": return LeakipediaLeakedDataCategory.SexualOrientation;
-    case "SEXUAL_PRACTICES": return LeakipediaLeakedDataCategory.SexualPractices;
     case "ETHNICITY": return LeakipediaLeakedDataCategory.Ethnicity;
-    case "RELIGION": return LeakipediaLeakedDataCategory.Religion;
-    case "POLITICAL_VIEWS": return LeakipediaLeakedDataCategory.PoliticalViews;
     case "PHYSICAL_ATTRIBUTES": return LeakipediaLeakedDataCategory.PhysicalAttributes;
-    case "HEALTH": return LeakipediaLeakedDataCategory.Health;
-
-    case "DIGITAL_IDENTITIES": return LeakipediaLeakedDataCategory.DigitalIdentities;
-    case "USER_NAMES": return LeakipediaLeakedDataCategory.UserNames;
-    case "LOGIN_NAMES": return LeakipediaLeakedDataCategory.LoginNames;
-
-    case "INTERESTS": return LeakipediaLeakedDataCategory.Interests;
     case "SKILLS": return LeakipediaLeakedDataCategory.Skills;
 
-    case "PHOTOS": return LeakipediaLeakedDataCategory.Photos;
-    case "SENSITIVE_PHOTOS": return LeakipediaLeakedDataCategory.SensitivePhotos;
-    case "VIDEOS": return LeakipediaLeakedDataCategory.Videos;
-    case "AUDIOS": return LeakipediaLeakedDataCategory.Audios;
-    case "PRIVATE_MESSAGES": return LeakipediaLeakedDataCategory.PrivateMessages;
-    case "PAYMENT_HISTORY": return LeakipediaLeakedDataCategory.PaymentHistory;
-    case "WEBSITE_ACTIVITY": return LeakipediaLeakedDataCategory.WebsiteActivity;
-
-    case "IMEI_NUMBERS": return LeakipediaLeakedDataCategory.IMEINumbers;
-    case "IMSI_NUMBERS": return LeakipediaLeakedDataCategory.IMSINumbers;
-
-    case "IP_ADDRESSES": return LeakipediaLeakedDataCategory.IPAddresses;
-    case "MAC_ADDRESSES": return LeakipediaLeakedDataCategory.MACAddresses;
-
-    case "KEYBOARD_LOGS": return LeakipediaLeakedDataCategory.KeyboardLogs;
-    case "PASSWORD_HINTS": return LeakipediaLeakedDataCategory.PasswordHints;
-    case "HASHED_PASSWORDS": return LeakipediaLeakedDataCategory.HashedPasswords;
-    case "PLAIN_PASSWORDS": return LeakipediaLeakedDataCategory.PlainPasswords;
-    case "AUTH_TOKENS": return LeakipediaLeakedDataCategory.AuthTokens;
-
-    case "CREDIT_CARD_NUMBERS": return LeakipediaLeakedDataCategory.CreditCardNumbers;
-    case "CREDIT_CARD_CVV": return LeakipediaLeakedDataCategory.CreditCardCVV;
-    case "CRYPTOCURRENCY_DATA": return LeakipediaLeakedDataCategory.CryptocurrencyData;
-
-    case "CONTACTS": return LeakipediaLeakedDataCategory.Contacts;
-    case "RELATIONSHIPS": return LeakipediaLeakedDataCategory.Relationships;
-    case "FAMILY": return LeakipediaLeakedDataCategory.Family;
-
-    case "EDUCATION": return LeakipediaLeakedDataCategory.Education;
-    case "INCOME_LEVEL": return LeakipediaLeakedDataCategory.IncomeLevel;
-    case "OCCUPATIONS": return LeakipediaLeakedDataCategory.Occupations;
-    case "EMPLOYER": return LeakipediaLeakedDataCategory.Employer;
-
-    case "ASSETS_INFORMATION": return LeakipediaLeakedDataCategory.AssetsInformation;
+    case "RELIGION": return LeakipediaLeakedDataCategory.Religion;
+    case "DECEASED_DATE": return LeakipediaLeakedDataCategory.DeceasedDate;
+  
+    case "SOCIAL_MEDIA_PROFILES": return LeakipediaLeakedDataCategory.SocialMediaProfiles;
+    case "USER_NAMES": return LeakipediaLeakedDataCategory.UserNames;
+    case "LOGIN_NAMES": return LeakipediaLeakedDataCategory.LoginNames;
+    
     case "CONSUMER_HABITS": return LeakipediaLeakedDataCategory.ConsumerHabits;
     case "PAYMENT_METHODS": return LeakipediaLeakedDataCategory.PaymentMethods;
-    case "CREDITICIAL_STATUS": return LeakipediaLeakedDataCategory.CrediticialStatus;
-    case "FINANCIAL_DATA": return LeakipediaLeakedDataCategory.FinancialData;
-    case "TAXATION_RECORDS": return LeakipediaLeakedDataCategory.TaxationRecords;
-    case "DONATIONS": return LeakipediaLeakedDataCategory.Donations;
-
+   
+    case "RELATIONSHIPS": return LeakipediaLeakedDataCategory.Relationships;
+    case "FAMILY": return LeakipediaLeakedDataCategory.Family;
+    
+    case "EDUCATION": return LeakipediaLeakedDataCategory.Education;
+    case "OCCUPATIONS": return LeakipediaLeakedDataCategory.Occupations;
+    case "EMPLOYER": return LeakipediaLeakedDataCategory.Employer;
+    
+    case "IP_ADDRESSES": return LeakipediaLeakedDataCategory.IPAddresses;
+    case "MAC_ADDRESSES": return LeakipediaLeakedDataCategory.MACAddresses;
+    
     case "OTHERS": return LeakipediaLeakedDataCategory.Others;
-
+    
     default:
       if (exceptionOnError) 
         throw new Error("Invalid data category string");
@@ -94,75 +103,85 @@ export function stringToLeakedDataCategory(s: string, exceptionOnError: boolean 
 
 export function leakedDataCategoryToString(category: LeakipediaLeakedDataCategory, exceptionOnError: boolean = false): string {
   switch (category){
-    case LeakipediaLeakedDataCategory.EmailAddresses: return "EMAIL_ADDRESSES"; 
-    case LeakipediaLeakedDataCategory.PhoneNumbers: return "PHONE_NUMBERS"; 
-    case LeakipediaLeakedDataCategory.Addresses: return "ADDRESSES"; 
-    case LeakipediaLeakedDataCategory.Name: return "NAME"; 
-    case LeakipediaLeakedDataCategory.SocialSecurityNumber: return "SOCIAL_SECURITY_NUMBER"; 
-    case LeakipediaLeakedDataCategory.PassportNumber: return "PASSPORT_NUMBER"; 
-    case LeakipediaLeakedDataCategory.BiometricData: return "BIOMETRIC_DATA"; 
-    case LeakipediaLeakedDataCategory.Gender: return "GENDER"; 
-    case LeakipediaLeakedDataCategory.Birthdate: return "BIRTHDATE"; 
-    case LeakipediaLeakedDataCategory.Languages: return "LANGUAGES"; 
-    case LeakipediaLeakedDataCategory.Nationalities: return "NATIONALITIES"; 
-    case LeakipediaLeakedDataCategory.Locations: return "LOCATIONS"; 
-    case LeakipediaLeakedDataCategory.SexualOrientation: return "SEXUAL_ORIENTATION"; 
-    case LeakipediaLeakedDataCategory.SexualPractices: return "SEXUAL_PRACTICES"; 
-    case LeakipediaLeakedDataCategory.Ethnicity: return "ETHNICITY"; 
-    case LeakipediaLeakedDataCategory.Religion: return "RELIGION"; 
-    case LeakipediaLeakedDataCategory.PoliticalViews: return "POLITICAL_VIEWS"; 
-    case LeakipediaLeakedDataCategory.PhysicalAttributes: return "PHYSICAL_ATTRIBUTES"; 
-    case LeakipediaLeakedDataCategory.Health: return "HEALTH"; 
+    // Critical
+    case LeakipediaLeakedDataCategory.CryptocurrencyData: return "CRYPTOCURRENCY_DATA";
+    case LeakipediaLeakedDataCategory.CreditCardCVV: return "CREDIT_CARD_CVV";
+    case LeakipediaLeakedDataCategory.CreditCardNumbers: return "CREDIT_CARD_NUMBERS";
+    case LeakipediaLeakedDataCategory.PlainPasswords: return "PLAIN_PASSWORDS";
+    case LeakipediaLeakedDataCategory.AuthTokens: return "AUTH_TOKENS";
+    case LeakipediaLeakedDataCategory.KeyboardLogs: return "KEYBOARD_LOGS";
+    case LeakipediaLeakedDataCategory.SensitivePhotos: return "SENSITIVE_PHOTOS";
+    case LeakipediaLeakedDataCategory.SensitiveVideos: return "SENSITIVE_VIDEOS";
+    case LeakipediaLeakedDataCategory.SexualOrientation: return "SEXUAL_ORIENTATION";
+    case LeakipediaLeakedDataCategory.SexualPractices: return "SEXUAL_PRACTICES";
+    case LeakipediaLeakedDataCategory.FinancialData: return "FINANCIAL_DATA";
+    case LeakipediaLeakedDataCategory.PrivateMessages: return "PRIVATE_MESSAGES"
+        
+    // High
+    case LeakipediaLeakedDataCategory.HashedPasswords: return "HASHED_PASSWORDS";
+    case LeakipediaLeakedDataCategory.DeviceInformation: return "DEVICE_INFORMATION";
+    case LeakipediaLeakedDataCategory.Purchases: return "PURCHASES";
+    case LeakipediaLeakedDataCategory.Photos: return "PHOTOS";
+    case LeakipediaLeakedDataCategory.Videos: return "VIDEOS";
+    case LeakipediaLeakedDataCategory.Audios: return "AUDIOS";
+    case LeakipediaLeakedDataCategory.PartialCreditCardData: return "PARTIAL_CREDIT_CARD_DATA";
+    case LeakipediaLeakedDataCategory.CrediticialStatus: return "CREDITICIAL_STATUS";
+    case LeakipediaLeakedDataCategory.Donations: return "DONATIONS";
+    case LeakipediaLeakedDataCategory.TaxationRecords: return "TAXATION_RECORDS";
+    case LeakipediaLeakedDataCategory.UtilityBills: return "UTILITY_BILLS"
     
-    case LeakipediaLeakedDataCategory.DigitalIdentities: return "DIGITAL_IDENTITIES"; 
-    case LeakipediaLeakedDataCategory.UserNames: return "USER_NAMES"; 
-    case LeakipediaLeakedDataCategory.LoginNames: return "LOGIN_NAMES"; 
-    
-    case LeakipediaLeakedDataCategory.Interests: return "INTERESTS"; 
-    case LeakipediaLeakedDataCategory.Skills: return "SKILLS"; 
-    
-    case LeakipediaLeakedDataCategory.Photos: return "PHOTOS"; 
-    case LeakipediaLeakedDataCategory.SensitivePhotos: return "SENSITIVE_PHOTOS"; 
-    case LeakipediaLeakedDataCategory.Videos: return "VIDEOS"; 
-    case LeakipediaLeakedDataCategory.Audios: return "AUDIOS"; 
-    case LeakipediaLeakedDataCategory.PrivateMessages: return "PRIVATE_MESSAGES"; 
-    case LeakipediaLeakedDataCategory.PaymentHistory: return "PAYMENT_HISTORY";
-    case LeakipediaLeakedDataCategory.WebsiteActivity: return "WEBSITE_ACTIVITY";
-    
-    case LeakipediaLeakedDataCategory.IMEINumbers: return "IMEI_NUMBERS"; 
-    case LeakipediaLeakedDataCategory.IMSINumbers: return "IMSI_NUMBERS"; 
-    
-    case LeakipediaLeakedDataCategory.IPAddresses: return "IP_ADDRESSES"; 
-    case LeakipediaLeakedDataCategory.MACAddresses: return "MAC_ADDRESSES"; 
-    
-    case LeakipediaLeakedDataCategory.KeyboardLogs: return "KEYBOARD_LOGS"; 
-    case LeakipediaLeakedDataCategory.PasswordHints: return "PASSWORD_HINTS"; 
-    case LeakipediaLeakedDataCategory.HashedPasswords: return "HASHED_PASSWORDS"; 
-    case LeakipediaLeakedDataCategory.PlainPasswords: return "PLAIN_PASSWORDS"; 
-    case LeakipediaLeakedDataCategory.AuthTokens: return "AUTH_TOKENS"; 
-    
-    case LeakipediaLeakedDataCategory.CreditCardNumbers: return "CREDIT_CARD_NUMBERS"; 
-    case LeakipediaLeakedDataCategory.CreditCardCVV: return "CREDIT_CARD_CVV"; 
-    case LeakipediaLeakedDataCategory.CryptocurrencyData: return "CRYPTOCURRENCY_DATA"; 
-    
-    case LeakipediaLeakedDataCategory.Contacts: return "CONTACTS"; 
-    case LeakipediaLeakedDataCategory.Relationships: return "RELATIONSHIPS"; 
-    case LeakipediaLeakedDataCategory.Family: return "FAMILY"; 
-    
-    case LeakipediaLeakedDataCategory.Education: return "EDUCATION"; 
-    case LeakipediaLeakedDataCategory.IncomeLevel: return "INCOME_LEVEL"; 
-    case LeakipediaLeakedDataCategory.Occupations: return "OCCUPATIONS"; 
-    case LeakipediaLeakedDataCategory.Employer: return "EMPLOYER"; 
-    
-    case LeakipediaLeakedDataCategory.AssetsInformation: return "ASSETS_INFORMATION"; 
-    case LeakipediaLeakedDataCategory.ConsumerHabits: return "CONSUMER_HABITS"; 
-    case LeakipediaLeakedDataCategory.PaymentMethods: return "PAYMENT_METHODS"; 
-    case LeakipediaLeakedDataCategory.CrediticialStatus: return "CREDITICIAL_STATUS"; 
-    case LeakipediaLeakedDataCategory.FinancialData: return "FINANCIAL_DATA"; 
-    case LeakipediaLeakedDataCategory.TaxationRecords: return "TAXATION_RECORDS"; 
-    case LeakipediaLeakedDataCategory.Donations: return "DONATIONS"; 
-    
-    case LeakipediaLeakedDataCategory.Others: return "OTHERS"; 
+    // Medium
+    case LeakipediaLeakedDataCategory.PasswordHints: return "PASSWORD_HINTS";
+    case LeakipediaLeakedDataCategory.Addresses: return "ADDRESSES";
+    case LeakipediaLeakedDataCategory.PassportNumbers: return "PASSPORT_NUMBERS";
+    case LeakipediaLeakedDataCategory.GovermentIssuedIDs: return "GOVERMENT_ISSUED_IDS";
+    case LeakipediaLeakedDataCategory.BiometricData: return "BIOMETRIC_DATA";
+    case LeakipediaLeakedDataCategory.PhoneNumbers: return "PHONE_NUMBERS";
+    case LeakipediaLeakedDataCategory.EmailAddresses: return "EMAIL_ADDRESSES";
+    case LeakipediaLeakedDataCategory.AssetsInformation: return "ASSETS_INFORMATION";
+    case LeakipediaLeakedDataCategory.IncomeLevel: return "INCOME_LEVEL";
+    case LeakipediaLeakedDataCategory.Contacts: return "CONTACTS";
+    case LeakipediaLeakedDataCategory.Health: return "HEALTH";
+    case LeakipediaLeakedDataCategory.PoliticalViews: return "POLITICAL_VIEWS";
+    case LeakipediaLeakedDataCategory.Habits: return "HABITS";
+    case LeakipediaLeakedDataCategory.Interests: return "INTERESTS";
+    case LeakipediaLeakedDataCategory.IMEINumbers: return "IMEI_NUMBERS";
+    case LeakipediaLeakedDataCategory.IMSINumbers: return "IMSI_NUMBERS";
+    case LeakipediaLeakedDataCategory.WebsiteActivity: return "WEBSITE_ACTIVITY"
+        
+    // Low
+    case LeakipediaLeakedDataCategory.Name: return "NAME";
+    case LeakipediaLeakedDataCategory.Gender: return "GENDER";
+    case LeakipediaLeakedDataCategory.Birthdate: return "BIRTHDATE";
+    case LeakipediaLeakedDataCategory.Languages: return "LANGUAGES";
+    case LeakipediaLeakedDataCategory.Nationalities: return "NATIONALITIES";
+    case LeakipediaLeakedDataCategory.Locations: return "LOCATIONS";
+    case LeakipediaLeakedDataCategory.Ethnicity: return "ETHNICITY";
+    case LeakipediaLeakedDataCategory.PhysicalAttributes: return "PHYSICAL_ATTRIBUTES";
+    case LeakipediaLeakedDataCategory.Skills: return "SKILLS"
+
+    case LeakipediaLeakedDataCategory.Religion: return "RELIGION";
+    case LeakipediaLeakedDataCategory.DeceasedDate: return "DECEASED_DATE"
+
+    case LeakipediaLeakedDataCategory.SocialMediaProfiles: return "SOCIAL_MEDIA_PROFILES";
+    case LeakipediaLeakedDataCategory.UserNames: return "USER_NAMES";
+    case LeakipediaLeakedDataCategory.LoginNames: return "LOGIN_NAMES"
+
+    case LeakipediaLeakedDataCategory.ConsumerHabits: return "CONSUMER_HABITS";
+    case LeakipediaLeakedDataCategory.PaymentMethods: return "PAYMENT_METHODS"
+
+    case LeakipediaLeakedDataCategory.Relationships: return "RELATIONSHIPS";
+    case LeakipediaLeakedDataCategory.Family: return "FAMILY"
+
+    case LeakipediaLeakedDataCategory.Education: return "EDUCATION";
+    case LeakipediaLeakedDataCategory.Occupations: return "OCCUPATIONS";
+    case LeakipediaLeakedDataCategory.Employer: return "EMPLOYER"
+
+    case LeakipediaLeakedDataCategory.IPAddresses: return "IP_ADDRESSES";
+    case LeakipediaLeakedDataCategory.MACAddresses: return "MAC_ADDRESSES"
+
+    case LeakipediaLeakedDataCategory.Others: return "OTHERS"
+
     
     default:
       if (exceptionOnError) 
