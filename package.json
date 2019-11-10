@@ -1,6 +1,6 @@
 {
   "name": "@depsel/doctorprivacy-clientjs",
-  "version": "0.1.52",
+  "version": "0.1.53",
   "description": "DoctorPrivacy Javascript API Client",
   "author": "Alejandro Nicodemo",
   "license": "MIT",
@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0",
+    "moment": "^2.24.0",
     "query-string": "^6.2.0"
   }
 }

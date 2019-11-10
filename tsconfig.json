@@ -5,7 +5,8 @@
     "declaration": true,
     "rootDir": "./src",
     "outDir": "./lib",
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "lib",

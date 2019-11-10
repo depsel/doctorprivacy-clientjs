@@ -6,7 +6,7 @@ import { stringify } from 'query-string';
 import {
   LeakipediaReportQuery,
   leakipediaReportQueryParser
-} from '../../helpers';
+} from '../../helpers/leakipedia';
 
 import { ERROR_BAD_REQUEST } from '../base/base.consts';
 
