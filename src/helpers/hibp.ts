@@ -155,7 +155,7 @@ function dataclassesToDataCategoriesText(dataClasses: string[]): string[] {
         if (typeof v === 'string') result.add(v);
       });
     } else if (typeof dataClass === 'string') {
-      if (typeof v === 'string') result.add(v);
+      result.add(dataClass);
     } else {
       result.add('OTHERS');
     }
