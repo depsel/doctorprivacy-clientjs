@@ -7,3 +7,4 @@ export * from './leakipedia/leakipedia.types';
 export * from './leakipedia/leakipedia.controller';
 export * from './user/user.types';
 export * from './user/user.controller';
+export * from './hibp/hibp.types';
