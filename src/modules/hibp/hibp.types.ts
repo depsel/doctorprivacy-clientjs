@@ -1,13 +1,17 @@
 import { LeakipediaSource } from "../leakipedia/leakipedia.types";
 
-type Bitpos = number;
+export type Bitpos = number;
+
+export interface HIBPUnknownBreaches { [bitPos: number]: LeakipediaSource };
 
 export class HIBPSearchResponseEntity {
   results!: { [email: string]: number[] }
-  unknownBreaches?: { [bitPos: number]: LeakipediaSource };
+  unknownBreaches?: HIBPUnknownBreaches;
 }
+
+export interface HIBPKnownBreaches { [name: string]: Bitpos };
 
 export class HIBPSearchDto {
   emails!: string[];
-  knownBreaches?: { [name: string]: Bitpos };
+  knownBreaches?: HIBPKnownBreaches;
 }
