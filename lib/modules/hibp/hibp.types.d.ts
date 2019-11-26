@@ -7,6 +7,9 @@ export declare class HIBPSearchResponseEntity {
     results: {
         [email: string]: number[];
     };
+    strategies: {
+        [email: string]: string;
+    };
     unknownBreaches?: HIBPUnknownBreaches;
 }
 export interface HIBPKnownBreaches {
@@ -15,4 +18,5 @@ export interface HIBPKnownBreaches {
 export declare class HIBPSearchDto {
     emails: string[];
     knownBreaches?: HIBPKnownBreaches;
+    wait?: number;
 }
